@@ -95,7 +95,7 @@ function Editor() {
   useEffect(() => {
     socket.on("suggestion", (data) => {
       setIsLoadingSuggestions(false);
-      setMessages((messages) => [...messages, data.suggestion.message]);
+      setMessages((messages) => [data.suggestion.message, ...messages]);
     });
 
     socket.on("submit_answer", (data) => {
